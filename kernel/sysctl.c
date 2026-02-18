@@ -95,6 +95,11 @@
 #if defined(CONFIG_SYSCTL)
 
 /* External variables not in a header file. */
+#ifdef CONFIG_HAVE_ARCH_MMAP_RND_BITS
+extern int mmap_rnd_bits;
+extern int mmap_rnd_bits_min;
+extern int mmap_rnd_bits_max;
+#endif
 extern int sysctl_overcommit_memory;
 extern int sysctl_overcommit_ratio;
 extern int max_threads;
@@ -1161,6 +1166,17 @@ static struct ctl_table vm_table[] = {
 		.extra1		= &zero,
 		.extra2		= &one_hundred,
 	},
+	#ifdef CONFIG_HAVE_ARCH_MMAP_RND_BITS
+	{
+		.procname   = "mmap_rnd_bits",
+		.data       = &mmap_rnd_bits,
+		.maxlen     = sizeof(mmap_rnd_bits),
+		.mode       = 0644,
+		.proc_handler   = proc_dointvec_minmax,
+		.extra1     = &mmap_rnd_bits_min,
+		.extra2     = &mmap_rnd_bits_max,
+	},
+	#endif
 	{
 		.procname	= "dirty_bytes",
 		.data		= &vm_dirty_bytes,

@@ -44,6 +44,12 @@
 
 #include "internal.h"
 
+#ifdef CONFIG_HAVE_ARCH_MMAP_RND_BITS
+int mmap_rnd_bits __read_mostly = CONFIG_ARCH_MMAP_RND_BITS;
+int mmap_rnd_bits_min __read_mostly = CONFIG_ARCH_MMAP_RND_BITS_MIN;
+int mmap_rnd_bits_max __read_mostly = CONFIG_ARCH_MMAP_RND_BITS_MAX;
+#endif
+
 #ifndef arch_mmap_check
 #define arch_mmap_check(addr, len, flags)	(0)
 #endif

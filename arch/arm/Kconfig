@@ -70,6 +70,22 @@ config ARM
 	  Europe.  There is an ARM Linux project with a web page at
 	  <http://www.arm.linux.org.uk/>.
 
+config HAVE_ARCH_MMAP_RND_BITS
+    bool
+    default y if MMU
+
+config ARCH_MMAP_RND_BITS_MIN
+    int
+    default 8
+
+config ARCH_MMAP_RND_BITS_MAX
+    int
+    default 16
+
+config ARCH_MMAP_RND_BITS
+    int
+    default 8
+
 config ARM_HAS_SG_CHAIN
 	bool
 
