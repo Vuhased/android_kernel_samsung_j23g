@@ -2,6 +2,7 @@ based on https://github.com/j23g/android_kernel_samsung_j23g
 
 ```bash
 git clone -b lineage-15.1-wip https://github.com/Vuhased/android_kernel_samsung_j23g.git kernel/samsung/j23g
+```
 
 Linux kernel release 3.x <http://kernel.org/>
 
