@@ -1,9 +1,5 @@
 based on https://github.com/j23g/android_kernel_samsung_j23g
 
-```bash
-git clone -b lineage-15.1-wip https://github.com/Vuhased/android_kernel_samsung_j23g.git kernel/samsung/j23g
-```
-
 Linux kernel release 3.x <http://kernel.org/>
 
 These are the release notes for Linux version 3.  Read them carefully,
@@ -416,3 +412,8 @@ IF SOMETHING GOES WRONG:
    gdb'ing a non-running kernel currently fails because gdb (wrongly)
    disregards the starting offset for which the kernel is compiled.
 
+
+
+
+```bash
+git clone -b lineage-15.1-wip https://github.com/Vuhased/android_kernel_samsung_j23g.git kernel/samsung/j23g
